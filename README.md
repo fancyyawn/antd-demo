@@ -37,3 +37,7 @@ tyarn #安装依赖
 
 tyarn start #本地启动
 ```
+
+## 示例
+
+![demo](./doc/demo.png)
