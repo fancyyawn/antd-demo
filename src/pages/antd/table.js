@@ -1,6 +1,7 @@
 import React from 'react'
 import {Breadcrumb, Divider} from 'antd';
 import TableDemo from "@/pages/antd/components/table";
+import TableTreeDemo from "@/pages/antd/components/tableTree";
 
 export default ()=>(
 
@@ -13,6 +14,7 @@ export default ()=>(
 
     <Divider>Table</Divider>
     <TableDemo />
+    <TableTreeDemo />
 
   </div>
 );
