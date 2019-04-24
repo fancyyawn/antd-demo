@@ -15,7 +15,7 @@ const AnchorDemo = ()=>{
   const [affix, setAffix] = useState(false);
   return <div>
 
-    <Switch style={{marginBottom: 10, marginLeft: 300}} checked={affix} onChange={()=> setAffix(pre=> !pre)} checkedChildren='Affix' unCheckedChildren='UnAffix'/>
+    <Switch style={{marginBottom: 10, marginLeft: 300}} checked={affix} onChange={checked=> setAffix(checked)} checkedChildren='Affix' unCheckedChildren='UnAffix'/>
 
     <Anchor offsetTop='20' affix={affix}>
       <Link href="#tree" title="Tree" />
