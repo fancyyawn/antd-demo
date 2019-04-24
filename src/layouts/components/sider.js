@@ -1,27 +1,36 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {
   Statistic, Divider, Anchor,
   Timeline, Icon, Tag, Row, Col,
   Card, Steps, Carousel,
   Typography, Calendar,
-  PageHeader, Badge
+  PageHeader, Badge,
+  Switch
 } from 'antd'
+import TreeDemo from './tree';
 import './carousel.less'
 
 const { Link } = Anchor;
-const AnchorDemo = ()=>(
-  <Anchor offsetTop='20'>
-    <Link href="#anchor" title="Anchor" />
-    <Link href="#timeline" title="Timeline" />
-    <Link href="#steps" title="Steps" />
-    <Link href="#tag" title="Tag" />
-    <Link href="#badge" title="Badge" />
-    <Link href="#calendar" title="Calendar" />
-    <Link href="#typography" title="Typography" />
-    <Link href="#statistic" title="Statistic" />
-    <Link href="#carousel" title="Carousel" />
-  </Anchor>
-);
+const AnchorDemo = ()=>{
+  const [affix, setAffix] = useState(false);
+  return <div>
+
+    <Switch style={{marginBottom: 10, marginLeft: 300}} checked={affix} onChange={()=> setAffix(pre=> !pre)} checkedChildren='Affix' unCheckedChildren='UnAffix'/>
+
+    <Anchor offsetTop='20' affix={affix}>
+      <Link href="#tree" title="Tree" />
+      <Link href="#anchor" title="Anchor" />
+      <Link href="#timeline" title="Timeline" />
+      <Link href="#steps" title="Steps" />
+      <Link href="#tag" title="Tag" />
+      <Link href="#badge" title="Badge" />
+      <Link href="#calendar" title="Calendar" />
+      <Link href="#typography" title="Typography" />
+      <Link href="#statistic" title="Statistic" />
+      <Link href="#carousel" title="Carousel" />
+    </Anchor>
+  </div>
+};
 
 
 const Countdown = Statistic.Countdown;
@@ -151,6 +160,9 @@ export default ()=>{
 
       <Divider id='anchor'>Anchor</Divider>
       <AnchorDemo />
+
+      <Divider id='tree'>Tree</Divider>
+      <TreeDemo />
 
       <Divider id='timeline'>Timeline</Divider>
       <TimeLineDemo />
